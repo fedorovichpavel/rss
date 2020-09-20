@@ -75,7 +75,7 @@ header li {
 header #libg {
 position: relative;
 margin:0 50px 0 50px;
-background: url(assets/vector.png) center top no-repeat;
+background: url(assets/vector.svg) center top no-repeat;
 width: 44px;
 height: 45px;
 }
@@ -650,7 +650,7 @@ border-left:1px solid #4E4E4E;
 .footer-logo {
 width:528px;
 margin-top: 60px;
-background: url(assets/vector.png) center top no-repeat;
+background: url(assets/vector.svg) center top no-repeat;
 }
 
 .copyright {
