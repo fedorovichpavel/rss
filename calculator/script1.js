@@ -2,7 +2,7 @@ const numbers = document.querySelectorAll('.number');
 const operations = document.querySelectorAll('.operator');
 const clearBtns = document.querySelectorAll('.clear-btn');
 const decimalBtn = document.getElementById('decimal');
-const result = document.getElementById('result');
+const sqrtBtn = document.getElementById('sqrt');
 const display = document.getElementById('display');
 let MemoryCurrentNumber = 0;
 let MemoryNewNumber = false;
@@ -31,6 +31,8 @@ for (var i = 0; i < clearBtns.length; i++) {
 
 decimalBtn.addEventListener('click', decimal);
 
+sqrtBtn.addEventListener('click', sqrt);
+
 function numberPress(number) {
   if (MemoryNewNumber) {
     display.value = number;
@@ -43,6 +45,20 @@ function numberPress(number) {
     }
   }
 }
+
+function sqrt(argument) {
+  let LocalSqrt = display.value;
+
+  if (MemoryNewNumber === false) {
+      MemoryCurrentNumber = Math.sqrt(LocalSqrt);
+      display.value = MemoryCurrentNumber;
+      MemoryNewNumber = true;
+  } else 
+  MemoryCurrentNumber = Math.sqrt(LocalSqrt);
+      display.value = MemoryCurrentNumber;
+      MemoryNewNumber = false;
+}
+
 
 function operationPress(op) {
   let localOperationMemory = display.value;
