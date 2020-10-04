@@ -37,7 +37,7 @@ body {
     flex-direction: column;
 }
 
-.logo__title {
+.logo__title h1 {
     color: $color-primary-color;
     font-family: Georgia;
     font-size: 32px;
@@ -79,6 +79,11 @@ body {
     line-height: 160%;
     font-size: 15px;
     font-weight: 400;
+}
+
+.list__link:hover {
+    cursor: pointer;
+    color: $color-light-s;
 }
 
 .list__link_active {
@@ -153,4 +158,477 @@ body {
     background-color: $color-primary-color;
     border-radius: 100px;
     border: none;
+}
+
+.content-section__button:hover {
+    cursor: pointer;
+    background-color: $color-primary-light;
+}
+
+.about {
+    background-color: $color-light-xl;
+    display: flex;
+}
+
+.about-wrapper {
+    display: flex;
+    padding-top: 80px;
+    width: 100%;
+    justify-content: space-around;
+    padding-bottom: 100px;
+}
+
+.about__content {
+    display: flex;
+    width: 850px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about__content_img {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.about__content_text {
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+}
+
+.about__content_text h3 {
+    width: 370px;
+    color: $color-dark-l;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.about__content_text p {
+    padding-top: 25px;
+    color: $color-dark-xl;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.pets {
+    display: flex;
+    background-color: $color-light-l;
+}
+
+.pets-wrapper {
+    padding: 80px 0 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.pets__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.pets__content_title {
+    width: 400px;
+}
+
+.pets__content_title h3 {
+    color: $color-dark-l;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    width: 100%;
+}
+
+.pets__content_main {
+    width: 100%;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pets__content_main_cards {
+    display: flex;
+    width: 990px;
+    justify-content: space-between;
+}
+
+.firstpet {
+    background: $color-light-s url(../../assets/pets-katrine.png) no-repeat;
+    border-radius: 9px 9px 0px 0px;
+    width: 270px;
+    height: 435px;
+    align-items: center;
+    display: flex;
+}
+
+.pets__content_button {
+    padding-top: 271px;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pets__content_button p {
+    color: $color-dark-l;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    justify-content: space-around;
+}
+
+.pets__content_button1 {
+    font-family: Georgia;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    width: 187px;
+    padding: 12px 0;
+    margin-top: 30px;
+    border: 2px solid #F1CDB3;
+    background-color: $color-light-xl;
+    border-radius: 100px;
+    justify-content: space-around;
+    display: flex;
+}
+
+.pets__content_button1:hover {
+    cursor: pointer;
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+}
+
+.secondpet {
+    background: $color-light-s url(../../assets/pets-jennifer.png) no-repeat;
+    border-radius: 9px 9px 0px 0px;
+    width: 270px;
+    height: 435px;
+    align-items: center;
+    display: flex;
+}
+
+.thirdpet {
+    background: $color-light-s url(../../assets/pets-woody.png) no-repeat;
+    border-radius: 9px 9px 0px 0px;
+    width: 270px;
+    height: 435px;
+    align-items: center;
+    display: flex;
+}
+
+.pets__content_button2 {
+    padding-top: 2How you can help our shelter0px;
+    width: 261px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+}
+
+.pets__content_button2 button {
+    width: 261px;
+    margin-top: 61px;
+}
+
+.button__arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0;
+}
+
+.button__arrow_left:hover {
+    cursor: pointer;
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+}
+
+.button__arrow_left {
+    background-color: $color-light-l;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+}
+
+.button__arrow_right {
+    background-color: $color-light-l;
+    border: 2px solid #F1CDB3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+}
+
+.button__arrow_right:hover {
+    cursor: pointer;
+    border: 2px solid $color-primary-light;
+    background-color: $color-primary-light;
+}
+
+.help {
+    background-color: $color-light-xl;
+    display: flex;
+}
+
+.help__wrapper {
+    padding: 80px 0 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help__title {
+    width: 100%;
+}
+
+.help__title h3 {
+    color: $color-dark-l;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+
+.help__list {
+    padding: 5px 87px 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.help__list_ul {
+    width: 100%;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding-top: 55px;
+}
+
+.help__list_ul2 {
+    padding-left: 84px;
+    padding-right: 84px;
+}
+
+.help__list_li {
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: $color-dark-l
+}
+
+.help__list_li img {
+    padding-bottom: 30px;
+}
+
+.donation {
+    background-color: $color-light-l;
+    display: flex;
+}
+
+.donation__wrapper_center {
+    justify-content: space-around;
+    width: 100%;
+    padding: 80px 0 100px;
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.donation__wrapper {
+    display: flex;
+}
+
+.donation_content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-top: 1px;
+}
+
+.donation_image {
+    padding-top: 13px;
+}
+
+.donation_content_title h3 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    color: $color-dark-l;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+}
+
+.donation_content_subtitle {
+    padding: 23px 0 20px;
+}
+
+.donation_content_subtitle p {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: $color-dark-l;
+    line-height: 110%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+}
+
+.donation_cardlink img {
+    padding-right: 15px;
+}
+
+.donation_cardlink a {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: $color-dark-l;
+    text-decoration: none;
+    line-height: 115%;
+    align-items: center;
+    letter-spacing: 0.06em;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0px 0px 15px;
+    background: #F1CDB3;
+    border-radius: 9px;
+    width: 349px;
+    height: 43px;
+}
+
+.donation_cardlink a:hover {
+    background-color: $color-primary-light;
+    color: black;
+}
+
+.donation_describe {
+    padding-top: 20px;
+    width: 380px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+}
+
+.footer {
+    background: url(../../assets/noise_transparent@2X.png), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+    display: flex;
+}
+
+.footer__wrapper {
+    display: flex;
+    width: 100%;
+    padding-top: 40px;
+    justify-content: space-between;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    padding-top: 16px;
+}
+
+.footer__contacts h3 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.footer__contacts a {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: #F1CDB3;
+    display: flex;
+    align-items: center;
+}
+
+.footer__adress {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 60px;
+    padding-top: 16px;
+    padding-right: 5px;
+}
+
+.footer__adress h3 {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.footer__adress a {
+    text-decoration: none;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+    display: flex;
+    align-items: center;
+}
+
+.footer__contact_fix {
+    padding-bottom: 3px;
 }
