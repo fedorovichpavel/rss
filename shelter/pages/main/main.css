@@ -341,7 +341,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 320px) {
   .content-section__title {
     width: 230px;
     margin-left: 0;
