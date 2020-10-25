@@ -175,22 +175,22 @@ function setBgGreet() {
 
     if (hourBG < 12 && hourBG >= 6) {
         // Morning
-        srcImg = `../assets/images/morning/${arrimg[hourBG%6]}.jpg`;
+        srcImg = `assets/images/morning/${arrimg[hourBG%6]}.jpg`;
 
 
     } else if (hourBG < 18) {
         // Afternoon
-        srcImg = `../assets/images/day/${arrimg[hourBG%6]}.jpg`;
+        srcImg = `assets/images/day/${arrimg[hourBG%6]}.jpg`;
 
 
     } else if (hourBG <= 23) {
         // Evening
-        srcImg = `../assets/images/evening/${arrimg[hourBG%6]}.jpg`;
+        srcImg = `assets/images/evening/${arrimg[hourBG%6]}.jpg`;
 
 
     } else {
         // Night
-        srcImg = `../assets/images/night/${arrimg[hourBG%6]}.jpg`;
+        srcImg = `assets/images/night/${arrimg[hourBG%6]}.jpg`;
 
 
     }
