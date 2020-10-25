@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/owfont-regular.css">
+    <title>momentum</title>
+</head>
+
+<body>
+    <div class="weather">
+
+        <div class="weather-city">
+            <span class="city" contenteditable="true" spellcheck="false"></span>
+            <div class="temp">
+                <i class="weather-icon owf"></i>
+                <div class="temperature"></div>
+            </div>
+            <span class="error-city">Please, enter correct city.</span>
+        </div>
+        <div class="weather-info">
+            <div class="weather-description"></div>
+            <div class="humidity"></div>
+            <div class="wind"></div>
+        </div>
+    </div>
+    <span class="days"></span>
+    <div class='mid'>
+        <img class="arrleft slideLeft button" src="/assets/images/arrow-left.svg" alt="arrow-left">
+        <time class="time"></time>
+        <img class="arrright slideRight button" src="/assets/images/arrow-right.svg" alt="arrow-right">
+    </div>
+    <h1>
+        <span class="greeting"></span>
+        <span class="name" contenteditable="true" spellcheck="false"></span><span>!</span>
+    </h1>
+    <h2>What Is Your Focus For Today?</h2>
+    <h2 class="focus" contenteditable="true" spellcheck="false"></h2>
+    <div class="block-quote">
+        <img class="btn" src="/assets/reload.png" alt="reload"></img>
+        <figure class="quote">
+            <blockquote></blockquote>
+            <figcaption style="align-self: flex-end; padding-top:10px;"></figcaption>
+        </figure>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
