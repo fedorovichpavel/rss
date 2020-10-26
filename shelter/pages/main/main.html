@@ -7,10 +7,10 @@
     <title>Shelter</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap">
-
 </head>
 
 <body>
+    <div class="popup__burger"></div>
     <header class="header">
         <div class="wrapper">
             <div class="logo">
@@ -23,12 +23,27 @@
             </div>
 
             <nav class="menu">
+                <img src="../../assets/Burger.svg" class="burger">
                 <ul class="list">
                     <li class="list__item">
-                        <a class="list__link list__link_active">About the shelter</a>
+                        <a href="/pages/main/main.html" class="list__link list__link_active">About the shelter</a>
                     </li>
                     <li class="list__item">
-                        <a class="list__link list__link_disabled">Our pets</a>
+                        <a href="/pages/pets/pets.html" class="list__link list__link_disabled">Our pets</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link_disabled">Help the shelter</a>
+                    </li>
+                    <li class="list__item">
+                        <a class="list__link list__link_disabled">Contacts</a>
+                    </li>
+                </ul>
+                <ul class="list2">
+                    <li class="list__item">
+                        <a href="/pages/main/main.html" class="list__link list__link_active">About the shelter</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="/pages/pets/pets.html" class="list__link list__link_disabled">Our pets</a>
                     </li>
                     <li class="list__item">
                         <a class="list__link list__link_disabled">Help the shelter</a>
@@ -52,7 +67,7 @@
                         <p class="content-section__subtitle">
                             We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!
                         </p>
-                        <button class="content-section__button" type="button">
+                        <button class="content-section__button" type="button" onclick="document.location='../pets/pets.html'">
 							Make a friend
 						</button>
                     </div>
@@ -220,6 +235,7 @@
             </div>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 
 </html>
