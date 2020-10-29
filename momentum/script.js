@@ -136,9 +136,11 @@ const slideRight = document.querySelector('.slideRight');
 
 const date = new Date();
 let hour = date.getHours();
+let min1 = date.getMinutes();
 
 function changeIndexBG(e) {
-    if (e.target === slideRight || dateBG.getMinutes() === 0) {
+
+    if (e.target === slideRight || min1 === 0) {
         hour = Number(hour) + 1;
     } else if (e.target === slideLeft) {
         hour = Number(hour) - 1;
