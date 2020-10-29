@@ -8,12 +8,10 @@ const time = document.querySelector('.time'),
 // Options
 const showAmPm = true;
 
-const date = new Date();
-let hour = date.getHours();
-
 // Show Time
 function showTime() {
     let today = new Date(),
+        hour = today.getHours(),
         min = today.getMinutes(),
         sec = today.getSeconds();
 
@@ -136,6 +134,8 @@ const arrayImg = randomImg();
 const slideLeft = document.querySelector('.slideLeft');
 const slideRight = document.querySelector('.slideRight');
 
+const date = new Date();
+let hour = date.getHours();
 
 function changeIndexBG(e) {
     if (e.target === slideRight) {
@@ -160,8 +160,9 @@ function setBgGreet() {
     const dateBG = new Date();
     let hourBG = dateBG.getHours();
     let hour1 = dateBG.getHours();
-    if (dateBG.getMinutes() === 0 && dateBG.getSeconds() === 0) {
+    if (dateBG.getMinutes() === 0) {
         hour++;
+        hourBG++;
     }
     if (hourBG !== hour) {
         hourBG = hour;
