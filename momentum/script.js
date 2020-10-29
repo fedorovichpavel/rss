@@ -20,7 +20,9 @@ function showTime() {
 
     time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
 
+    if (min === 0) { changeBGh(); }
     setTimeout(showTime, 1000);
+
 }
 
 //Show day
@@ -135,25 +137,28 @@ const slideLeft = document.querySelector('.slideLeft');
 const slideRight = document.querySelector('.slideRight');
 
 const date = new Date();
-let hour = date.getHours();
+let hour2 = date.getHours();
 let min1 = date.getMinutes();
 
 function changeIndexBG(e) {
-
-    if (e.target === slideRight || min1 === 0) {
-        hour = Number(hour) + 1;
+    if (e.target === slideRight) {
+        hour2 = Number(hour2) + 1;
     } else if (e.target === slideLeft) {
-        hour = Number(hour) - 1;
+        hour2 = Number(hour2) - 1;
     }
-    if (hour > 23) {
-        hour = hour % 24;
-    } else if (hour === -1) {
-        hour = 23;
+    if (min1 == 0) { hour2 = Number(hour2) + 1; }
+    if (hour2 > 23) {
+        hour2 = hour2 % 24;
+    } else if (hour2 === -1) {
+        hour2 = 23;
     }
     setBgGreet();
-
 }
 
+function changeBGh() {
+    hour2 = Number(hour2) + 1;
+    setBgGreet();
+}
 
 
 
@@ -163,8 +168,9 @@ function setBgGreet() {
     let hourBG = dateBG.getHours();
     let hour1 = dateBG.getHours();
 
-    if (hourBG !== hour) {
-        hourBG = hour;
+
+    if (hourBG !== hour2) {
+        hourBG = hour2;
     }
 
     let srcImg = '';
