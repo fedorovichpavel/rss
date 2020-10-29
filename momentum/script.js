@@ -138,7 +138,7 @@ const date = new Date();
 let hour = date.getHours();
 
 function changeIndexBG(e) {
-    if (e.target === slideRight) {
+    if (e.target === slideRight || dateBG.getMinutes() === 0) {
         hour = Number(hour) + 1;
     } else if (e.target === slideLeft) {
         hour = Number(hour) - 1;
@@ -160,10 +160,7 @@ function setBgGreet() {
     const dateBG = new Date();
     let hourBG = dateBG.getHours();
     let hour1 = dateBG.getHours();
-    if (dateBG.getMinutes() === 0) {
-        hour++;
-        hourBG++;
-    }
+
     if (hourBG !== hour) {
         hourBG = hour;
     }
