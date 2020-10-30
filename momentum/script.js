@@ -20,7 +20,7 @@ function showTime() {
 
     time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
 
-    if (min === 0) { changeBGh(); }
+    if (min === 0 && sec === 0) { changeBGh(); }
     setTimeout(showTime, 1000);
 
 }
