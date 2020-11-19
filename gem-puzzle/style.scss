@@ -2,7 +2,30 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 13%;
-    background-color: rgb(24, 217, 231);
+    background-color: #18d9e7;
+    transition: 1s ease-in-out;
+}
+
+body>div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+body>div>div {
+    font-family: monospace;
+    font-size: 2rem;
+    margin: 2rem;
+    font-weight: 700;
+}
+
+button {
+    margin-left: 2rem;
+    margin-top: 10%;
+    width: 12rem;
+    height: 3rem;
+    font-size: 2rem;
 }
 
 canvas {

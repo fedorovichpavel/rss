@@ -1,38 +1,45 @@
 body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding-top: 13%;
-    background-color: #18d9e7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 13%;
+  background-color: #18d9e7;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
-body>div {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+body > div {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
-body>div>div {
-    font-size: 2rem;
-    margin: 2rem;
-    font-weight: 700;
+body > div > div {
+  font-family: monospace;
+  font-size: 2rem;
+  margin: 2rem;
+  font-weight: 700;
 }
 
 button {
-    margin-left: 2rem;
-    margin-top: 10%;
-    width: 12rem;
-    height: 3rem;
-    font-size: 2rem;
+  margin-left: 2rem;
+  margin-top: 10%;
+  width: 12rem;
+  height: 3rem;
+  font-size: 2rem;
 }
 
 canvas {
-    border: 2px solid #333;
+  border: 2px solid #333;
 }
-
-
 /*# sourceMappingURL=style.css.map */

@@ -152,26 +152,46 @@ window.onload = function() {
 
     var game;
     game = localStorage.getItem('game');
+    let hour = 0;
+    let min = 0;
+    let sec = -1;
     btn.onclick = function() {
         game = new Game(context, cellSize);
         game.mix(300);
-        game.draw();
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        game.draw(context, cellSize);
         howClicks.innerText = 'Clicks = 0';
-        time();
-
-        function time() {
-            sec++;
-            if (sec == 60) {
-                min++;
-                sec = 0;
-            }
-            if (min == 60) {
-                hour++;
-                min = 0;
-            }
-            timer.innerText = "Timer " + (hour.toString().length == 1 ? '0' + hour : hour) + ':' + (min.toString().length == 1 ? '0' + min : min) + ':' + (sec.toString().length == 1 ? '0' + sec : sec);
-            setTimeout(time, 1000);
+        hour = 0;
+        min = 0;
+        sec = -1;
+        if (time.counter !== true) {
+            hour = 0;
+            min = 0;
+            sec = -1;
+            time();
+        } else {
+            hour = 0;
+            min = 0;
+            sec = -1;
         }
+    }
+
+
+
+
+    function time() {
+        time.counter = true;
+        sec++;
+        if (sec == 60) {
+            min++;
+            sec = 0;
+        }
+        if (min == 60) {
+            hour++;
+            min = 0;
+        }
+        timer.innerText = "Timer " + (hour.toString().length == 1 ? '0' + hour : hour) + ':' + (min.toString().length == 1 ? '0' + min : min) + ':' + (sec.toString().length == 1 ? '0' + sec : sec);
+        setTimeout(time, 1000);
     }
 
     canvas.onclick = function(e) {
@@ -197,16 +217,14 @@ window.onload = function() {
         context.fillRect(0, 0, canvas.width, canvas.height);
         game.draw();
         if (game.victory()) {
-            alert("Собрано за " + game.getClicks() + " касание!");
+            alert("Собрано за " + hour + ':' + min + ' и ' + game.getClicks() + " касание!");
             game.mix(300);
             context.fillRect(0, 0, canvas.width, canvas.height);
             game.draw(context, cellSize);
         }
     }
 
-    let hour = 0;
-    let min = 0;
-    let sec = -1;
+
 
 
 
