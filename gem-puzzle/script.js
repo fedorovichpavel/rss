@@ -128,6 +128,7 @@ function Game(context, cellSize) {
 
     this.getClicks = function() {
         return clicks;
+
     };
 }
 
@@ -143,7 +144,12 @@ window.onload = function() {
     document.querySelector("body > div").appendChild(howClicks);
     howClicks.innerText = 'Clicks = 0';
     let timer = document.createElement('div');
-    document.querySelector("body > div").prepend(timer)
+    document.querySelector("body > div").prepend(timer);
+
+    let audio = document.createElement('audio');
+    document.body.appendChild(audio);
+    document.querySelector("body > audio").src = 'click.mp3';
+
     canvas.width = 320;
     canvas.height = 320;
     var cellSize = canvas.width / 4;
@@ -198,11 +204,10 @@ window.onload = function() {
         var x = (e.pageX - canvas.offsetLeft) / cellSize | 0;
         var y = (e.pageY - canvas.offsetTop) / cellSize | 0;
         console.log(e.pageY, canvas.offsetTop);
-        console.log(game.getClicks());
         howClicks.innerText = 'Clicks = ' +
             game.getClicks();
         event(x, y);
-        localStorage.setItem('game', e.target.innerText);
+        audio.play();
     };
 
     canvas.ontouchend = function(e) {
