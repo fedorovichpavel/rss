@@ -156,8 +156,6 @@ window.onload = function() {
     var context = canvas.getContext("2d");
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    var game;
-    game = localStorage.getItem('game');
     let hour = 0;
     let min = 0;
     let sec = -1;
@@ -166,7 +164,8 @@ window.onload = function() {
         game.mix(300);
         context.fillRect(0, 0, canvas.width, canvas.height);
         game.draw(context, cellSize);
-        howClicks.innerText = 'Clicks = 0';
+        howClicks.innerText = 'Clicks = ' +
+            game.getClicks();
         hour = 0;
         min = 0;
         sec = -1;
@@ -204,8 +203,8 @@ window.onload = function() {
         var x = (e.pageX - canvas.offsetLeft) / cellSize | 0;
         var y = (e.pageY - canvas.offsetTop) / cellSize | 0;
         console.log(e.pageY, canvas.offsetTop);
-        howClicks.innerText = 'Clicks = ' +
-            game.getClicks();
+
+
         event(x, y);
         audio.play();
     };
@@ -219,6 +218,8 @@ window.onload = function() {
 
     function event(x, y) {
         game.move(x, y);
+        howClicks.innerText = 'Clicks = ' +
+            game.getClicks();
         context.fillRect(0, 0, canvas.width, canvas.height);
         game.draw();
         if (game.victory()) {

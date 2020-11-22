@@ -6,6 +6,12 @@ body {
     transition: 1s ease-in-out;
 }
 
+@media (max-width:620px) {
+    body {
+        flex-direction: column;
+    }
+}
+
 body>div {
     height: 100%;
     display: flex;
@@ -30,4 +36,7 @@ button {
 
 canvas {
     border: 2px solid #333;
+    width: 320px;
+    height: 320px;
+    align-self: center;
 }
