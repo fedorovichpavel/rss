@@ -48,16 +48,15 @@ module.exports = (env, options) => {
 
         plugins: [
             new CleanWebpackPlugin(),
-            /* new CopyWebpackPlugin({
-                 patterns: [ {
-                         from: path.resolve(__dirname, 'src/assets/audio'),
-                         to: path.resolve(__dirname, 'dist'),
-                     } , {
-                         from: path.resolve(__dirname, 'src/assets/img'),
-                         to: path.resolve(__dirname, 'dist'),
-                     }
-                 ],
-             }),  */
+            new CopyWebpackPlugin({
+                patterns: [{
+                    from: path.resolve(__dirname, 'src/assets/audio'),
+                    to: path.resolve(__dirname, 'dist/src/assets/audio'),
+                }, {
+                    from: path.resolve(__dirname, 'src/assets/img'),
+                    to: path.resolve(__dirname, 'dist/src/assets/img'),
+                }],
+            }),
             new MiniCssExtractPlugin({
                 filename: 'style.css'
             }),
