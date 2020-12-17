@@ -4,7 +4,6 @@ require("./style.css");
 
 var _func = require("./js/func");
 
-//import './js/card';
 //Main page generate cards
 var card = document.querySelectorAll(".hero__wrapper > div"),
     checkbox = document.querySelector("#bopis"),
@@ -60,16 +59,30 @@ window.onload = function () {
   card.forEach(function (e, i) {
     e.onclick = function () {
       if (cardPageGenerated) {
-        (0, _func.sayWord)(numAction, i);
+        document.querySelectorAll('.reload').forEach(function (e, i) {
+          return e.onclick = function () {
+            _func.generateAction.reload(i);
+          };
+        });
 
-        _func.generateAction.reload(i);
+        document.querySelectorAll('.reload')[i].onclick = function () {
+          _func.generateAction.reload(i);
+        };
+
+        (0, _func.sayWord)(numAction, i);
+        e.addEventListener('mouseleave', function () {
+          document.querySelectorAll('.cardpage')[i].style.transform = 'rotateY(0deg)';
+          document.querySelectorAll(".description__text")[i].style.display = 'flex';
+          document.querySelectorAll(".description__text_translate")[i].style.display = 'none';
+          document.querySelectorAll('.reload')[i].style.display = 'block';
+        });
       } else {
         (0, _func.generateAction)(i + 1);
         cardPageGenerated = true;
         numAction = i + 1;
-        document.querySelectorAll('.reload').forEach(function (el, ind) {
-          return el.onclick = function () {
-            document.querySelectorAll('.cardpage')[ind].style.transform = 'rotateY(180deg)';
+        document.querySelectorAll('.reload').forEach(function (e, i) {
+          return e.onclick = function () {
+            _func.generateAction.reload(i);
           };
         });
       }
@@ -84,9 +97,6 @@ burgerUrl.forEach(function (e, i) {
   e.onclick = function () {
     if (i == 0) {
       (0, _func.generateMain)();
-      document.querySelector(".burger").style.transform = 'rotate(180deg)';
-      document.querySelector(".mask").style.position = 'relative';
-      document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
       cardPageGenerated = false;
 
       window.onscroll = function () {
@@ -98,9 +108,6 @@ burgerUrl.forEach(function (e, i) {
       (0, _func.generateAction)(i);
       cardPageGenerated = true;
       numAction = i;
-      document.querySelector(".burger").style.transform = 'rotate(180deg)';
-      document.querySelector(".mask").style.position = 'relative';
-      document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
 
       window.onscroll = function () {
         window.scrollTo();
@@ -108,6 +115,10 @@ burgerUrl.forEach(function (e, i) {
 
       (0, _func.checkCheckbox)();
     }
+
+    document.querySelector(".burger").style.transform = 'rotate(180deg)';
+    document.querySelector(".mask").style.position = 'relative';
+    document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
   };
 }); //event delegation  для обработки событий кликов в игре
 // createElement  append removeChild innerHtml

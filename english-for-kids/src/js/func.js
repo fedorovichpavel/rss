@@ -14,29 +14,29 @@ export function checkCheckbox() {
 
 export function generateMain() {
 
-    for (let i = 0; i < cardConteiner.length; i++) {
-        cardConteiner[i].innerHTML = `<img src='${cards[i+1][0].image}' alt='${cards[0][i]}' class='card__img'>
-             <div class='description'>
-                 <div class='description__text'>${cards[0][i]}</div>
-                 <div class='point'></div>
-                 
-                 `;
-
-    }
+    cardConteiner.forEach((e, i) => {
+        e.innerHTML = `<img src='${cards[i+1][0].image}' alt='${cards[0][i]}' class='card__img'>
+        <div class='description'>
+            <div class='description__text'>${cards[0][i]}</div>
+            <div class='point'></div>
+            </div>
+            `;
+    });
 
 };
 
 export function generateAction(cardnum) {
     cardConteiner.forEach(e => e.classList.add('cardpage'));
     cardConteiner.forEach(e => e.classList.remove('card'));
-    for (let i = 0; i < cardConteiner.length; i++) {
-        cardConteiner[i].innerHTML = `<img src='${cards[cardnum][i].image}' alt='${cards[cardnum][i].word}' class='card__img2'>
-             <div class='description'>
-                 <div class='description__text'>${cards[cardnum][i].word}</div>
-                 <div class='description__text_translate' style='display:none;'>${cards[cardnum][i].translation}</div>
-                 <div class='reload'></div>
-                 `;
-    }
+    cardConteiner.forEach((e, i) => {
+        e.innerHTML = `<img src='${cards[cardnum][i].image}' alt='${cards[cardnum][i].word}' class='card__img2'>
+        <div class='description'>
+            <div class='description__text'>${cards[cardnum][i].word}</div>
+            <div class='description__text_translate' style='display:none;'>${cards[cardnum][i].translation}</div>
+            <div class='reload'></div>
+            </div>
+            `;
+    });
 
 };
 

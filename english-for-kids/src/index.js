@@ -1,16 +1,8 @@
 import './style.css';
-//import './js/card';
 
 import { generateMain, sayWord, generateAction, checkCheckbox, rotateCard } from './js/func';
 
-
 //Main page generate cards
-
-
-
-
-
-
 
 const card = document.querySelectorAll(".hero__wrapper > div"),
     checkbox = document.querySelector("#bopis"),
@@ -95,9 +87,6 @@ burgerUrl.forEach((e, i) => {
     e.onclick = function() {
         if (i == 0) {
             generateMain();
-            document.querySelector(".burger").style.transform = 'rotate(180deg)';
-            document.querySelector(".mask").style.position = 'relative';
-            document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
             cardPageGenerated = false;
             window.onscroll = function() {
                 window.scrollTo();
@@ -107,12 +96,12 @@ burgerUrl.forEach((e, i) => {
             generateAction(i);
             cardPageGenerated = true;
             numAction = i;
-            document.querySelector(".burger").style.transform = 'rotate(180deg)';
-            document.querySelector(".mask").style.position = 'relative';
-            document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
             window.onscroll = function() { window.scrollTo(); };
             checkCheckbox();
         }
+        document.querySelector(".burger").style.transform = 'rotate(180deg)';
+        document.querySelector(".mask").style.position = 'relative';
+        document.querySelector("body > header > div > div.burger__menu").style.left = '-100%';
     }
 });
 

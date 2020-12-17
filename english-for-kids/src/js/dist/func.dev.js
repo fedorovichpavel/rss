@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.checkCheckbox = checkCheckbox;
 exports.generateMain = generateMain;
 exports.generateAction = generateAction;
+exports.rotateCard = rotateCard;
 exports.sayWord = sayWord;
 
 var _card = require("./card");
@@ -27,10 +28,10 @@ function checkCheckbox() {
   }
 }
 
-function generateMain(imgStyle) {
-  for (var i = 0; i < cardConteiner.length; i++) {
-    cardConteiner[i].innerHTML = "<img src='".concat(_card.cards[i + 1][0].image, "' alt='").concat(_card.cards[0][i], "' class='card__img'>\n             <div class='description'>\n                 <div class='description__text'>").concat(_card.cards[0][i], "</div>\n                 <div class='point'></div>\n                 ");
-  }
+function generateMain() {
+  cardConteiner.forEach(function (e, i) {
+    e.innerHTML = "<img src='".concat(_card.cards[i + 1][0].image, "' alt='").concat(_card.cards[0][i], "' class='card__img'>\n        <div class='description'>\n            <div class='description__text'>").concat(_card.cards[0][i], "</div>\n            <div class='point'></div>\n            </div>\n            ");
+  });
 }
 
 ;
@@ -42,19 +43,25 @@ function generateAction(cardnum) {
   cardConteiner.forEach(function (e) {
     return e.classList.remove('card');
   });
-
-  for (var i = 0; i < cardConteiner.length; i++) {
-    cardConteiner[i].innerHTML = "<img src='".concat(_card.cards[cardnum][i].image, "' alt='").concat(_card.cards[cardnum][i].word, "' class='card__img2'>\n             <div class='description'>\n                 <div class='description__text'>").concat(_card.cards[cardnum][i].word, "</div>\n                 <div class='reload'></div>\n                 ");
-  }
+  cardConteiner.forEach(function (e, i) {
+    e.innerHTML = "<img src='".concat(_card.cards[cardnum][i].image, "' alt='").concat(_card.cards[cardnum][i].word, "' class='card__img2'>\n        <div class='description'>\n            <div class='description__text'>").concat(_card.cards[cardnum][i].word, "</div>\n            <div class='description__text_translate' style='display:none;'>").concat(_card.cards[cardnum][i].translation, "</div>\n            <div class='reload'></div>\n            </div>\n            ");
+  });
 }
 
 ;
 
 generateAction.reload = function (ind) {
-  document.querySelectorAll('.reload')[ind].onclick = function () {
-    cardConteiner[ind].style.transform = 'rotateY(180deg)';
-  };
+  document.querySelectorAll('.cardpage')[ind].style.transform = 'rotateY(180deg)';
+  document.querySelectorAll(".description__text")[ind].style.display = 'none';
+  document.querySelectorAll(".description__text_translate")[ind].style.display = 'flex';
+  document.querySelectorAll('.reload')[ind].style.display = 'none';
 };
+
+function rotateCard(ind) {
+  document.querySelectorAll('.cardpage')[ind].style.transform = 'rotateY(0deg)';
+  document.querySelectorAll(".description__text")[ind].style.display = 'flex';
+  document.querySelectorAll(".description__text_translate")[ind].style.display = 'none';
+}
 
 var audio = document.querySelector("body > audio");
 

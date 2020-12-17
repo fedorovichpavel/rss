@@ -10,7 +10,7 @@ module.exports = (env, options) => {
     const isProduction = options.mode === 'production';
     const config = {
         mode: isProduction ? 'production' : 'development',
-        devtool: isProduction ? 'none' : 'source-map',
+        devtool: isProduction ? false : 'source-map',
         devServer: {
             port: 4200,
         },
