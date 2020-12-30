@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body style="text-shadow: 5px 5px 5px #000;">
+    <div class="reveal">
+        <div class="slides">
+            <section data-background="./assets/img/reactbg.png">
+                <h2>React JS</h2>
+
+            </section>
+            <section data-background="./assets/img/reactbg.png">
+                <h2>What is React?</h2>
+                <ul>
+                    <li>React - is a JS library for building user interfaces.</li>
+                    <li>React was created by Jordan Walke, a software engineer at Facebook.</li>
+                    <li>Initially, React was intended for the web, for creating websites, but later the React Native platform appeared, which was already intended for mobile devices.
+                    </li>
+                    <li>React is a perfect tool for building scalable web applications.</li>
+                </ul>
+            </section>
+            <section data-background="./assets/img/reactbg.png">
+                <section>
+                    <h2>Virtual DOM</h2>
+                    <ul>
+                        <li class="fragment">The virtual DOM (VDOM) is a programming concept where an ideal, or "virtual", representaton of a UI is kept in memory and synced with the "real" DOM by a library such as ReactDOM. This process is called <strong>reconciliation</strong>.</li>
+                        <li class="fragment">This approach enables the declarative API of React: You tell React what state you want the UI to be in, and it makes sure the DOM matches that state.</li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li class="fragment">Rather than touching the DOM directly, we,re building an abstract version of it. That's it. We working with some kind of lightweight copy of our DOM. We can change it as we want and then save to our real DOM tree. While saving
+                            we should compare, find difference and change (re-render) what should be changed.</li>
+                        <li class="fragment">It is much faster than working directly with DOM, because it doesn't require all the heavyweight parts that go into a real DOM.</li>
+                    </ul>
+                </section>
+                <section><img src="./assets/img/vdom1.png" alt=""></section>
+                <section><img src="./assets/img/vdom2.png" alt=""></section>
+            </section>
+            <section data-background="./assets/img/reactbg.png">
+                <h2>JSX</h2>
+                <ul>
+                    <li class="fragment">JSX is an XML-like syntax extension to ECMAScript without any defined semantics. It's not intended to be implemented by engines or browsers. It's not a proposal to incorporate JSX into the ECMAScript spec itself. It's intended to be
+                        used by various preprocessors to transform these tokens into standart ECMAScript.</li>
+                    <li class="fragment">Neither a string nor HTML.</li>
+                    <li class="fragment">HTML and JS is more of a separation of technologies rather than concerns.</li>
+                </ul>
+            </section>
+            <section style="font-size: 70%;" data-background="./assets/img/reactbg.png">
+                <h2>To render an HTML tag in React, just use the tag names in lowercase with some JSX:</h2>
+                <pre> <code class="hljs javascript html" style="word-wrap: break-word;">	//className is used in JSX for class attribute 
+	const fooDiv =	&lt;div className="foo" /&gt;;
+	// Render where div#example is our placeholder for insertion 
+	ReactDOM.render(fooDiv, document.getElementById('example'));</code></pre>
+
+            </section>
+
+
+            <section data-background="./assets/img/reactbg.png">
+                <h2>Components</h2>
+                <ul>
+                    <li class="fragment">Components let you split the UI into independent, reusable pieces, and think about each piece in isolation.</li>
+                    <li class="fragment">Conceptually, components are like JS functions. They accept arbitary inputs (called "props") and return React elements describing what should appear on the screen.</li>
+                    <li class="fragment">React is all about writing and creating components.</li>
+                    <li class="fragment">Components can be imagine as a custom HTML elements.</li>
+                </ul>
+            </section>
+            <section data-background="./assets/img/reactbg.png"><img src="./assets/img/redux.jpg" alt="" style="border-radius: 50%;width: 30%; ">
+                <section style="padding-top: 15%;">
+                    <ul>
+                        <li class="fragment"><strong>Redux</strong> is a predictable state container for JS apps.</li>
+                        <li class="fragment"><strong>Motivation:</strong> Our code must manage more state than ever before.</li>
+                        <li class="fragment"><strong>Redux attempts to make state mutations predictable</strong> by imposing certain restrictions on how and when updates can happen.</li>
+                        <li class="fragment"><strong>Core concept:</strong> App's state is described as a plain object.</li>
+                    </ul>
+                </section>
+                <section style="padding-top: 15%;">
+                    <h2>Three Principles</h2>
+                    <ul style="font-size:70%;">
+                        <li class="fragment"><strong>Single source of truth:</strong><br> The state or your whole app is stored in an object tree within a single store.</li>
+                        <li class="fragment"><strong>State is read-only:</strong><br>The only way to change the state is to emit an action, an object describing what happened.</li>
+                        <li class="fragment"><strong>Changes are made with pure functions:</strong><br>To specify how the state tree is transformed by actions, you write pure reducers.</li>
+                    </ul>
+                </section>
+            </section>
+            <section data-background="./assets/img/reactbg.png">
+                <h2>Finally</h2>
+                <p>In essence, the ReactJS interface is different than other js libraries which are more imperative, meaning you tell them to change the DOM directly. Jquery is like this. ReactJS is more like: here is my state, and here is how you should
+                    interpret my state and how it will change. Now, I can sit back and let ReactJS handle the expensive and complicated task of making this visible to the user in the browser.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+</body>
+
+</html>
